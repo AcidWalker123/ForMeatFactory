@@ -1,0 +1,17 @@
+controllers_user:
+    resource:
+        path: ../src/User/Web/Controller/
+        namespace: App\User\Web\Controller
+    type: attribute
+
+controllers_product:
+    resource:
+        path: ../src/Product/Web/Controller/
+        namespace: App\Product\Web\Controller
+    type: attribute
+
+controllers_order:
+    resource:
+        path: ../src/Order/Web/Controller/
+        namespace: App\Order\Web\Controller
+    type: attribute

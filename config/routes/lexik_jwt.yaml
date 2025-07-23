@@ -1,0 +1,3 @@
+login:
+    path: /api/login
+    controller: lexik_jwt_authentication.controller.login

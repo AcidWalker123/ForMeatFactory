@@ -1,0 +1,9 @@
+framework:
+    cache:
+        pools:
+            cache.products:
+                adapter: cache.adapter.redis
+                provider: '%env(REDIS_URL)%'
+            cache.orders:
+                adapter: cache.adapter.redis
+                provider: '%env(REDIS_URL)%'
