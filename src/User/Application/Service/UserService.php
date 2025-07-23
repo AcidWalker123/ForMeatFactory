@@ -12,8 +12,7 @@ use App\Shared\Domain\BaseService;
 class UserService extends BaseService
 {
     private UserRepository $userRepository;
-    private DtoToUserTransformer
-     $userDtoTransformer;
+    private DtoToUserTransformer $userDtoTransformer;
     public function __construct(
         UserRepository $userRepository,
         DtoToUserTransformer $userDtoTransformer) 
