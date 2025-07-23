@@ -66,8 +66,9 @@ class ProductService extends BaseService
 
         try {
             foreach ($dtos as $dto) {
-                if (!$dto instanceof CreateProductDto) {
-                    throw new \InvalidArgumentException('Expected instance of CreateProductDto');
+
+                if ($dto instanceof ProductDto) {
+                    throw new \InvalidArgumentException('Expected instance of ProductDto');
                 }
 
                 $product = $this->transformer->fromCreateDto($dto);

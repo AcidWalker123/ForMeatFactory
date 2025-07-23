@@ -3,17 +3,16 @@
 namespace App\Product\Application\Transformer;
 
 use App\Product\Domain\Entity\Product;
-use App\Product\Application\DTO\ProductDTO;
+use App\Product\Application\DTO\ProductDto;
 use App\Shared\Domain\BaseTransformer;
-use InvalidArgumentException;
 
 class ProductTransformer extends BaseTransformer
 {
-    public function toDTO(object $entity): ProductDTO
+    public function toDTO(object $entity): ProductDto
     {
         $this->assertEntity($entity, Product::class);
 
-        return new ProductDTO(
+        return new ProductDto(
             $entity->getId(),
             $entity->getTitle(),
             $entity->getDescription(),
