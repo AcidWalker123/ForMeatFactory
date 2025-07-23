@@ -71,4 +71,4 @@ php bin/console app:create-products
 symfony server:start
 ```
 
-### 7. Api works at http://127.0.0.1:8000 
+### 7. Api works at http://localhost:8000 
