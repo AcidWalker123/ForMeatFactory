@@ -12,12 +12,11 @@ use App\Shared\Domain\BaseService;
 class UserService extends BaseService
 {
     private UserRepository $userRepository;
-    private DtoToUserTransformer
-     $userDtoTransformer;
+    private DtoToUserTransformer $userDtoTransformer;
     public function __construct(
         UserRepository $userRepository,
-        DtoToUserTransformer $userDtoTransformer) 
-        {
+        DtoToUserTransformer $userDtoTransformer
+    ) {
         $this->userRepository = $userRepository;
         $this->userDtoTransformer = $userDtoTransformer;
     }
@@ -29,7 +28,7 @@ class UserService extends BaseService
             $user = $this->userDtoTransformer->transform($registerDto);
 
             if (
-                $this->userRepository->findOneBy(['phone' => $user->getPhone()]) && 
+                $this->userRepository->findOneBy(['phone' => $user->getPhone()]) &&
                 $this->userRepository->findOneBy(['adress' => $user->getAdress()])
             ) {
                 return new ResponseDto(
@@ -45,7 +44,7 @@ class UserService extends BaseService
                 message: 'User registered successfully',
                 success: true
             );
-            
+
         } catch (\Throwable $e) {
             return new ResponseDto(
                 message: 'Internal Server Error: ' . $e->getMessage(),

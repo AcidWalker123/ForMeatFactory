@@ -117,7 +117,7 @@ class User extends BaseEntity implements PasswordAuthenticatedUserInterface, Use
         return $this;
     }
 
-        public function getRoles(): array
+    public function getRoles(): array
     {
         $roles = $this->roles;
         $roles[] = 'ROLE_USER';

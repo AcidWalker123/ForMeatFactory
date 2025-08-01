@@ -6,9 +6,12 @@ use App\User\Application\Transformer\Contract\DtoToUserTransformerInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use App\User\Web\DTO\Request\RegisterDto;
 use App\User\Domain\Entity\User;
+
 final class DtoToUserTransformer implements DtoToUserTransformerInterface
 {
-    public function __construct(private readonly UserPasswordHasherInterface $hasher) {}
+    public function __construct(private readonly UserPasswordHasherInterface $hasher)
+    {
+    }
 
     public function transform(RegisterDto $dto): User
     {

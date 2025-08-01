@@ -15,7 +15,8 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 final class UserController extends AbstractController
 {
     private UserService $userService;
-    public function __construct(UserService $userService) {
+    public function __construct(UserService $userService)
+    {
         $this->userService = $userService;
     }
 
@@ -44,12 +45,12 @@ final class UserController extends AbstractController
             return $this->json([
                 'message' => $result->getMessage(),
                 'success' => $result->isSuccess()
-            ],Response::HTTP_CONFLICT);
+            ], Response::HTTP_CONFLICT);
         }
 
         return $this->json([
             "success" => $result->isSuccess(),
-            "user_id"=>$result->getEntityId()
+            "user_id" => $result->getEntityId()
         ], Response::HTTP_CREATED);
     }
 }

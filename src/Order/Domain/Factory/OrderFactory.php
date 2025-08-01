@@ -18,7 +18,8 @@ class OrderFactory extends BaseFactory
     public function __construct(
         private UserFinderInterface $userFinder,
         private ProductFinderInterface $productFinder
-    ) {}
+    ) {
+    }
 
     public function create(BaseDto $dto): BaseEntity
     {

@@ -13,7 +13,8 @@ class ProductDto extends BaseDto
         private float $price,
         private string $category,
         private bool $inStock
-    ) {}
+    ) {
+    }
     public function getId(): int
     {
         return $this->id;

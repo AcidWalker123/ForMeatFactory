@@ -12,7 +12,8 @@ use Symfony\Component\HttpFoundation\Response;
 final class ProductController extends AbstractController
 {
     private ProductService $productService;
-    public function __construct(ProductService $productService) {
+    public function __construct(ProductService $productService)
+    {
         $this->productService = $productService;
     }
     #[Route('', name: 'app_product', methods: ['GET'])]

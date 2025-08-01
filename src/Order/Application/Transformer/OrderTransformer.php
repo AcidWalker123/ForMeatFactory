@@ -9,7 +9,6 @@ use InvalidArgumentException;
 
 class OrderTransformer extends BaseTransformer
 {
-
     public function toDTO(object $entity): object
     {
         $this->assertEntity($entity, Order::class);

@@ -22,7 +22,8 @@ class ProductService extends BaseService
         private ProductTransformer $transformer,
         private CacheInterface $cacheProducts,
         private EntityManagerInterface $em
-    ) {}
+    ) {
+    }
 
     public function getAllProducts(): ResponseDto
     {
@@ -78,13 +79,13 @@ class ProductService extends BaseService
 
             $this->em->flush();
             $this->em->commit();
-            
+
             $this->clearCache();
 
             return new ResponseDto(
                 message: 'Products created successfully',
                 success: true,
-                data: array_map(fn(Product $p) => $p->getId(), $createdIds)
+                data: array_map(fn (Product $p) => $p->getId(), $createdIds)
             );
         } catch (\Throwable $e) {
             $this->em->rollback();

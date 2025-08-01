@@ -18,7 +18,7 @@ abstract class BaseDto implements ValidatableDTOInterface
             }
             return $errorMessages;
         }
-        
+
         return [];
     }
 }

@@ -15,7 +15,8 @@ use App\Order\Web\DTO\Request\CreateOrderDto;
 final class OrderController extends AbstractController
 {
     private OrderService $orderService;
-    public function __construct(OrderService $orderService) {
+    public function __construct(OrderService $orderService)
+    {
         $this->orderService = $orderService;
     }
 
@@ -27,7 +28,7 @@ final class OrderController extends AbstractController
         $dto->setUserId($data['user_id'] ?? null);
         $dto->setComment($data['comment'] ?? null);
         $dto->setOrderItems($data['products'] ?? []);
-        
+
         $errors = $dto->validate($validator);
         if (!empty($errors)) {
             return $this->json([
@@ -52,7 +53,7 @@ final class OrderController extends AbstractController
                     'message' => $result->getMessage(),
                 ], Response::HTTP_NOT_FOUND);
             }
-            if (str_contains($message,'Invalid data provided')) {
+            if (str_contains($message, 'Invalid data provided')) {
                 return $this->json([
                     'success' => $result->isSuccess(),
                     'message' => $result->getMessage(),

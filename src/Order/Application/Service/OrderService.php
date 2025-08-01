@@ -31,7 +31,8 @@ class OrderService extends BaseService
         private OrderFactory $orderFactory,
         private OrderTransformer $orderTransformer,
         private CacheInterface $cacheOrders,
-    ) {}
+    ) {
+    }
 
     public function create(BaseDto $dto): ResponseDto
     {

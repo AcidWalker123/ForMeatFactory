@@ -9,7 +9,8 @@ final class ResponseDto
         private bool $success = false,
         private int $entityId = 0,
         private array $data = []
-    ) {}
+    ) {
+    }
 
     public function getMessage(): string
     {

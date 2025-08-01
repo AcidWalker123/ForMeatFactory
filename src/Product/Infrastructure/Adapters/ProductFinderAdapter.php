@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Product\Infrastructure\Adapters;
+
 use App\Order\Application\Port\ProductFinderInterface;
 use App\Product\Infrastructure\Doctrine\Persistence\ProductRepository;
 use App\Product\Domain\Entity\Product;
